@@ -1,6 +1,6 @@
-import { connect } from "@/src/dbConfig/dbConfig";
+import { connect } from "@/dbConfig/dbConfig";
 import { NextRequest, NextResponse } from "next/server";
-import User from "@/src/models/userModel";
+import User from "@/models/userModel";
 
 connect();
 
@@ -28,9 +28,9 @@ export async function POST(request: NextRequest) {
 
     return NextResponse.json({
       message: "Email verified successfully",
-      sucess: true,
+      success: true,
     });
   } catch (error: any) {
-    return (NextResponse.json("error: error.message"), { status: 500 });
+    return NextResponse.json({ error: error.message }, { status: 500 });
   }
 }

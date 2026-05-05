@@ -1,5 +1,5 @@
-import { connect } from "@/src/dbConfig/dbConfig";
-import User from "@/src/models/userModel";
+import { connect } from "@/dbConfig/dbConfig";
+import User from "@/models/userModel";
 import { NextRequest, NextResponse } from "next/server";
 import bcryptjs from "bcryptjs";
 import jwt from "jsonwebtoken";
@@ -30,7 +30,7 @@ export async function POST(request: NextRequest) {
     //create token data
     const tokenData = {
       id: user._id,
-      ussrname: user.username,
+      username: user.username,
       email: user.email,
     };
 
@@ -49,6 +49,6 @@ export async function POST(request: NextRequest) {
     });
     return response;
   } catch (error: any) {
-    return NextResponse.json({ erro: error.message }, { status: 500 });
+    return NextResponse.json({ error: error.message }, { status: 500 });
   }
 }

@@ -1,9 +1,9 @@
-import { getDataFromToken } from "@/src/helpers/getDataFromToken";
+import { getDataFromToken } from "@/helpers/getDataFromToken";
 // import { models } from "mongoose";
 
 import { NextRequest, NextResponse } from "next/server";
-import User from "@/src/models/userModel.js";
-import { connect } from "@/src/dbConfig/dbConfig";
+import User from "@/models/userModel.js";
+import { connect } from "@/dbConfig/dbConfig";
 
 connect();
 
